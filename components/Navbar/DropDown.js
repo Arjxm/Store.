@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { Link } from 'react-router-dom'
+
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -36,7 +36,7 @@ export default function DropDown({userInfo}){
                     <div className="py-1">
                         <Menu.Item>
                             {({ active }) => (
-                                <Link
+                                <span
                                     to={`/profile`}
                                     className={classNames(
                                         active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
@@ -44,7 +44,7 @@ export default function DropDown({userInfo}){
                                     )}
                                 >
                                     User Profile
-                                </Link>
+                                </span>
                             )}
                         </Menu.Item>
                         {/*{*/}

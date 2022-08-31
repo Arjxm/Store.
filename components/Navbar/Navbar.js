@@ -6,7 +6,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Menu, Popover, Tab, Transition } from '@headlessui/react'
 import { ChevronDownIcon, HeartIcon, MenuIcon, SearchIcon, ShoppingBagIcon, XIcon } from '@heroicons/react/outline'
 
-import { Link } from 'react-router-dom'
+
 import {useDispatch,useSelector} from 'react-redux'
 
 import Search from './Search'
@@ -149,20 +149,20 @@ export default function Navbar(){
                                 </div>
 
                                 <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                                    <Link to="/login">
+                                    <span  >
                                         <div className="flow-root">
                                             <a href="#" className="-m-2 p-2 block font-medium text-gray-900">
                                                 Sign in
                                             </a>
                                         </div>
-                                    </Link>
-                                    <Link to="/signup">
+                                    </span>
+                                    <span to="/signup">
                                         <div className="flow-root">
                                             <a href="#" className="-m-2 p-2 block font-medium text-gray-900">
                                                 Create account
                                             </a>
                                         </div>
-                                    </Link>
+                                    </span>
                                 </div>
 
                                 <div className="border-t border-gray-200 py-6 px-4">
@@ -206,9 +206,9 @@ export default function Navbar(){
                                 {/* Flyout menus */}
                                 <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
                                     <div className="h-full flex space-x-8">
-                                        <Link to="/">
+                                        <span  >
                                             <h1 className="font-bold text-2xl mt-4">Store.</h1>
-                                        </Link>
+                                        </span>
                                         {/*{navigation.categories.map((category) => (*/}
                                         {/*    <Popover key={category.name} className="flex">*/}
                                         {/*        {({open}) => (*/}
@@ -350,7 +350,7 @@ export default function Navbar(){
                                     </div>
 
                                     {/* Cart */}
-                                    <Link to="/cart" className="ml-4 flow-root lg:ml-6">
+                                    <span  className="ml-4 flow-root lg:ml-6">
                                         <a href="#" className="group -m-2 p-2 flex items-center">
                                             <ShoppingBagIcon
                                                 className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
@@ -360,7 +360,7 @@ export default function Navbar(){
                                                 className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">cartItems.length</span>
                                             <span className="sr-only">items in cart, view bag</span>
                                         </a>
-                                    </Link>
+                                    </span>
 
                                     {/* profile */}
                                     {/*{userInfo && <NavbarDropdown userInfo={userInfo}/>}*/}
