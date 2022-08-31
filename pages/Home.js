@@ -7,6 +7,9 @@ export default function Main(){
         <>
             <Navbar/>
             <Header/>
+
+
+
             <Footer/>
         </>
     )
