@@ -5,5 +5,12 @@ export default  function Cart(){
 <h1>Hello World</h1>
 
 
+
+
+
+
+
+
+
     </>)
 }
