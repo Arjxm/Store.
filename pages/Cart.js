@@ -12,12 +12,5 @@ export default  function Cart(){
 
 
 
-
-
-
-
-
-
-
     </>)
 }
