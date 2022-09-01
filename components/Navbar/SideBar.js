@@ -1,6 +1,7 @@
 export default function SideBar({openSidebar}){
     return(
         <aside
+
             className={`sidebar w-64 md:shadow transform ${openSidebar ? "translate-x-0" : "-translate-x-full "}    md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-800 fixed top-0 left-0 h-[100vh]`}
         >
             <div className="sidebar-header flex items-center pl-6 py-4">
@@ -117,6 +118,7 @@ export default function SideBar({openSidebar}){
                     </li>
                 </ul>
             </div>
+
         </aside>
     )
 }
