@@ -3,7 +3,7 @@ const PaymentProcessor = artifacts.require("PaymentProcessor")
 
 module.exports = async function (deployer, network, addresses) {
     const[admin, payer, _] = addresses
-    if(network === 'develop'){
+    if(network === 'development'){
         await deployer.deploy(Dai);
         const dai = await Dai.deployed();
         await dai.faucet(payer, web3.utils.toWei('1000'));

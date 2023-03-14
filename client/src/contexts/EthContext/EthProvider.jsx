@@ -3,6 +3,7 @@ import Web3 from "web3";
 import EthContext from "./EthContext";
 import { reducer, actions, initialState } from "./state";
 
+
 function EthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -13,7 +14,7 @@ function EthProvider({ children }) {
         const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
         const { abi } = artifact;
-        let address, contract;
+        let address, contract
         try {
           address = artifact.networks[networkID].address;
           contract = new web3.eth.Contract(abi, address);
@@ -22,7 +23,7 @@ function EthProvider({ children }) {
         }
         dispatch({
           type: actions.init,
-          data: { artifact, web3, accounts, networkID, contract }
+          data: { artifact, web3, accounts, networkID, contract}
         });
       }
     }, []);
@@ -30,7 +31,7 @@ function EthProvider({ children }) {
   useEffect(() => {
     const tryInit = async () => {
       try {
-        const artifact = require("../../contracts/PaymentProcessor.json");
+        const artifact= require("../../contracts/PaymentProcessor.json");
         init(artifact);
       } catch (err) {
         console.error(err);
