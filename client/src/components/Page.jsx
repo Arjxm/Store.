@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 
 const Page = ({children}) => {
     return(
@@ -8,6 +9,7 @@ const Page = ({children}) => {
             <div>
                 {children}
             </div>
+            <Footer/>
         </div>
     )
 };

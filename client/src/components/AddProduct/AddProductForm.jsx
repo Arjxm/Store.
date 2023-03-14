@@ -43,7 +43,13 @@ const AddProductForm = (props) => {
 
                     <Input
                         type="text"
-                        placeholder="Image url"
+                        placeholder="Image url 1"
+                        value={price}
+                        onChange={(event) => setPrice(event.target.value)}
+                    />
+                    <Input
+                        type="text"
+                        placeholder="Image url 2"
                         value={price}
                         onChange={(event) => setPrice(event.target.value)}
                     />
@@ -63,11 +69,11 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #2f2f2f;
+  background: #525252;
   padding: 42px 24px;
   width: 18%;
-  border-radius: 36px;
-  
+  border-radius: 16px;
+
 `;
 
 const Input = styled.input`

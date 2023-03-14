@@ -1,6 +1,30 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+
+
+const ProductCard = ({ name, price, image, hoverImage }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleHover = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    return (
+        <ProductContainer onMouseEnter={handleHover} onMouseLeave={handleMouseLeave}>
+            <ProductImage src={image} alt={name} />
+            {hoverImage && isHovered && <ProductImageHover src={hoverImage} alt={name} />}
+            <ProductName>{name}</ProductName>
+            <ProductPrice>{price}</ProductPrice>
+        </ProductContainer>
+    );
+};
+
+
 const ProductContainer = styled.div`
   width: 300px;
   height: 400px;
@@ -32,26 +56,5 @@ const ProductPrice = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
 `;
-
-const ProductCard = ({ name, price, image, hoverImage }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleHover = () => {
-        setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-    };
-
-    return (
-        <ProductContainer onMouseEnter={handleHover} onMouseLeave={handleMouseLeave}>
-            <ProductImage src={image} alt={name} />
-            {hoverImage && isHovered && <ProductImageHover src={hoverImage} alt={name} />}
-            <ProductName>{name}</ProductName>
-            <ProductPrice>{price}</ProductPrice>
-        </ProductContainer>
-    );
-};
 
 export default ProductCard;
